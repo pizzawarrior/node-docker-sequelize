@@ -2,3 +2,7 @@
 - To start the server: `npm start` or using pm2: `npm run pm2`
 
 - To run tests: cd to src, then run: `npm run test`
+
+- To build an image map data volumes, and test the db connection: `docker compose run customerbook npm test`
+
+- To start up containers: `docker compose up`
