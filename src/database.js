@@ -1,5 +1,6 @@
-const Sequelize = require("sequelize");
-const sequelize = new Sequelize(
+import { Sequelize, STRING } from "sequelize";
+
+export const sequelize = new Sequelize(
   process.env.DB_SCHEMA || "postgres",
   process.env.DB_USER || "postgres",
   process.env.DB_PASSWORD || "",
@@ -12,17 +13,15 @@ const sequelize = new Sequelize(
     },
   }
 );
-const Person = sequelize.define("Person", {
+export const Person = sequelize.define("Person", {
   firstName: {
-    type: Sequelize.STRING,
+    type: STRING,
     allowNull: false,
   },
   lastName: {
-    type: Sequelize.STRING,
+    type: STRING,
     allowNull: true,
   },
 });
-module.exports = {
-  sequelize: sequelize,
-  Person: Person,
-};
+// export const sequelize = sequelize;
+// export const Person = Person;

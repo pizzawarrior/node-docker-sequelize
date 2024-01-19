@@ -1,2 +1,3 @@
-var db = require("../database.js");
-db.sequelize.sync();
+import { sequelize } from "../database.js";
+
+sequelize.sync();

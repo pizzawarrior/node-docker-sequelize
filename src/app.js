@@ -1,24 +1,29 @@
-// sample express app created with npx express-generator --no-view src
+// sample express app created with: npx express-generator --no-view src
 
-const express = require("express");
-const path = require("path");
-const cookieParser = require("cookie-parser");
-const logger = require("morgan");
+import express, { json, urlencoded } from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import cookieParser from "cookie-parser";
+import logger from "morgan";
+
+import indexRouter from "./routes/index.js";
+import personsRouter from "./routes/persons.js";
+
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
+
+console.log(__dirname); //////////// delete me
 
 const app = express();
 
-var indexRouter = require("./routes/index");
-var personsRouter = require("./routes/persons");
+app.use(logger("dev"));
+app.use(json());
+app.use(urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/persons", personsRouter);
 
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
-
-app.use("/persons", personsRouter);
-
-module.exports = app;
+export default app;
