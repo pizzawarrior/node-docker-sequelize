@@ -1,6 +1,6 @@
 
 ## Project Goals:
-* Use Node, Express, Docker, and PostgreSQL, and combine testing into a simple containerized HTTP service that persists data.
+* Create a simple HTTP Service using Node and Docker, and persist the data.
 
 ### This project is made with:
 - Node.js: for developing this server side application!
@@ -13,7 +13,21 @@
 
 - To run tests: cd to src, then run: `npm run test`
 
-- To build an image (if none exists), map data volumes (if none exists), and test the db connection: `docker compose run customerbook npm test`
-**Note** This will override the contents of the db and clear everything!
+- To build an image (if none exists), map data volumes (if none exists), and test the db connection: `docker compose run customerbook npm test` <br>
+**Note: This will override the contents of the db and clear everything!**
 
 - To run this project in dev using Docker Desktop: `docker compose up`
+
+## Next Steps:
+- update the model to handle more 'realistic' customer information, including: customer_id, transaction_id, transaction_type, and date_of_transaction
+- drop the current db and create a new one to handle an updated schema
+- modify tests to account for updates to the model
+- clean up the project directory and get rid of unused functions/ modules
+- refactor some modules to better adhere to the 3-layer app architecture, as seen here: https://blog.treblle.com/egergr/
+- write up what the models are, and what the data looks like. What are we storing?
+- draw a diagram of this app structure, including the models
+- what is the MVP of this project, and what are some features that would get added next?
+- what is the user-story for this project?
+- what are the future plans for CI/CD?
+- break out Postman or Insomnia, and add some data
+- add a React frontend and display the data in a clean and simple way
