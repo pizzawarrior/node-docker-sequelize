@@ -13,6 +13,7 @@ export const sequelize = new Sequelize(
     },
   }
 );
+
 export const Person = sequelize.define("Person", {
   firstName: {
     type: STRING,
@@ -23,5 +24,3 @@ export const Person = sequelize.define("Person", {
     allowNull: true,
   },
 });
-// export const sequelize = sequelize;
-// export const Person = Person;

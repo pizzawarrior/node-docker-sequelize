@@ -1,6 +1,6 @@
-import { sequelize, Person, destroy } from "../database";
+import { sequelize, Person } from "./database.js";
 
-beforAll(async () => {
+beforeAll(async () => {
   await sequelize.sync({ force: true });
 });
 
@@ -23,12 +23,12 @@ test("get person", async () => {
 
 test("delete person", async () => {
   expect.assertions(1);
-  await destroy({
+  await Person.destroy({
     where: {
       id: 1,
     },
   });
-  const person = await Person(findByPk(1));
+  const person = await Person.findByPk(1);
   expect(person).toBeNull();
 });
 
