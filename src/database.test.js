@@ -8,7 +8,7 @@ test("create person", async () => {
   expect.assertions(1);
   const person = await Person.create({
     id: 1,
-    firstName: "Marty",
+    firstName: "Martin",
     lastName: "McFly",
   });
   expect(person.id).toEqual(1);
