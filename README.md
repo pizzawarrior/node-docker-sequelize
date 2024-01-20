@@ -15,7 +15,6 @@
 - To run tests: cd to src, then run: `npm run test`
 
 - To build an image (if none exists), map data volumes (if none exists), and test the db connection: `docker compose run customerbook npm test` <br>
-**Note: This will override the contents of the db and clear everything!**
 
 - To run this project in dev using Docker Desktop: `docker compose up`
 
