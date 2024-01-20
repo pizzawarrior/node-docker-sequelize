@@ -1,6 +1,7 @@
 
 ## Project Goals:
 * Create a simple HTTP Service using Node and Docker, and persist the data.
+* Containerize the project, with one container for the db, and another for the API
 
 ### This project is made with:
 - Node.js: for developing this server side application!
@@ -31,3 +32,14 @@
 - what are the future plans for CI/CD?
 - break out Postman or Insomnia, and add some data
 - add a React frontend and display the data in a clean and simple way
+
+
+## Helpful links:
+-Link to this tutorial:
+* https://semaphoreci.com/community/tutorials/dockerizing-a-node-js-web-application
+
+-Link to this tutorial repo:
+* https://github.com/TomFern/dockerizing-nodejs/tree/master
+
+- CI/CD Docker docs:
+* https://docs.docker.com/language/nodejs/configure-ci-cd/
